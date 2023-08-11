@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @RestController
@@ -42,6 +43,8 @@ public class MemberController {
             MemberDto member = result.getMember();
             HttpSession session = request.getSession();
             session.setAttribute("loginMember", member);
+
+            log.info("세션 생성 완료");
         }
         return result;
     }

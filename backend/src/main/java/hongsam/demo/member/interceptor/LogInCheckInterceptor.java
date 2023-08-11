@@ -17,7 +17,7 @@ public class LogInCheckInterceptor implements HandlerInterceptor {
 
         if (session == null || session.getAttribute("loginMember") == null) {
             log.info("미인증 사용자 접근");
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized 상태 코드 설정
+//            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 Unauthorized 상태 코드 설정
             response.getWriter().write("false");
             return false;
         }
