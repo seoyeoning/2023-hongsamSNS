@@ -18,11 +18,11 @@ function App() {
 
   // 로그인 세션 확인
   useEffect(() => {
-    axios
-      .get(
-        'https://8d82-2406-5900-103c-d815-c570-c075-5faf-9b86.ngrok-free.app/home',
-        { withCredentials: true }
-      )
+    axios ({
+      method: 'get',
+      url: 'https://spring.loca.lt',
+      withCredentials: true  // 이 옵션을 설정하여 쿠키와 인증 정보를 함께 보냅니다.
+    })
       .then((response) => {
         console.log(response);
         const data = response.data;
@@ -37,7 +37,7 @@ function App() {
 
   const fecthItems = async () => {
     await axios
-      .get('http://localhost:4000/item')
+      .get('http://localhost:4000/board')
       .then((res) => {
         setItems(res.data);
       })

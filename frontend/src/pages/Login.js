@@ -29,7 +29,7 @@ const Login = ({ setIsLogin }) => {
 
     axios
       .post(
-        'https://8d82-2406-5900-103c-d815-c570-c075-5faf-9b86.ngrok-free.app/member/login',
+        'https://spring.loca.lt/member/login',
         user
       )
       .then((response) => {
